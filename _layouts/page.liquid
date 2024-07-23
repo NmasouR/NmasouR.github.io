@@ -18,6 +18,31 @@ layout: default
     </div>
   {% endif %}
 
+  {% if page.related_people %}
+    <h2>Key People</h2>
+    <div class="people">
+      {% if page.horizontal %}
+        <div class="container">
+          <div class="row row-cols-1 row-cols-md-2">
+            {% for person in site.people %}
+              {% if page.related_people contains person.title %}
+                {% include people_horizontal.liquid %}
+              {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+        {% else %}
+        <div class="row row-cols-1 row-cols-md-3">
+          {% for person in site.people %}
+            {% if page.related_people contains person.title %}
+              {% include people.liquid %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+  {% endif %}
+
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
   {% endif %}

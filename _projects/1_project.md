@@ -5,7 +5,10 @@ description: with background image
 img: assets/img/12.jpg
 importance: 1
 category: work
+horizontal: true
 related_publications: true
+related_people:
+    - Einstein
 ---
 
 Every project has a beautiful feature showcase page.
